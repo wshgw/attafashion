@@ -3,3 +3,4 @@ public/
 .DS_Store
 *.swp
 *.swo
+git_push.py
