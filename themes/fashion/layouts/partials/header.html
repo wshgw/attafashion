@@ -1,0 +1,9 @@
+<header class="site-header">
+  <a href="/" class="logo">{{ .Site.Title }}</a>
+  <nav>
+    <a href="/">Home</a>
+    {{ range .Site.Menus.main }}
+    <a href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>

@@ -1,0 +1,35 @@
+{{ define "main" }}
+<section class="hero">
+  <h1>{{ .Site.Title }}</h1>
+  <p class="subtitle">{{ .Site.Params.subtitle }}</p>
+</section>
+
+<section class="featured">
+  {{ range first 1 (where .Site.RegularPages "Section" "posts") }}
+  <article class="featured-card">
+    <div class="featured-content">
+      <span class="tag">{{ index (.Params.categories) 0 | default "Feature" }}</span>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+      <p>{{ .Summary | plainify | truncate 120 }}</p>
+    </div>
+  </article>
+  {{ end }}
+</section>
+
+<section class="grid">
+  <h2 class="section-title">Latest</h2>
+  <div class="post-grid">
+    {{ range after 1 (where .Site.RegularPages "Section" "posts") }}
+    <article class="post-card">
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <div class="meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+        <span class="category">{{ index (.Params.categories) 0 }}</span>
+      </div>
+      <p>{{ .Summary | plainify | truncate 80 }}</p>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

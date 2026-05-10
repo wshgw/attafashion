@@ -1,0 +1,105 @@
+/* ============================================
+   Fashion Theme — Minimal & Clean
+   ============================================ */
+
+:root {
+  --bg: #fafafa;
+  --text: #1a1a1a;
+  --muted: #888;
+  --accent: #c0392b;
+  --border: #eee;
+  --card-bg: #fff;
+  --font: "Helvetica Neue", Arial, sans-serif;
+  --max-width: 720px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+/* Header */
+.site-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 32px 0; border-bottom: 1px solid var(--border); margin-bottom: 48px;
+}
+.logo { font-size: 18px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: var(--text); }
+.site-header nav { display: flex; gap: 24px; }
+.site-header nav a { text-decoration: none; color: var(--muted); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; transition: color .2s; }
+.site-header nav a:hover { color: var(--text); }
+
+/* Hero */
+.hero { text-align: center; padding: 60px 0 48px; }
+.hero h1 { font-size: 32px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+.hero .subtitle { color: var(--muted); font-size: 14px; }
+
+/* Section title */
+.section-title { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+
+/* Featured */
+.featured { margin-bottom: 48px; }
+.featured-card { background: var(--card-bg); border: 1px solid var(--border); padding: 32px; }
+.featured-content .tag { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); }
+.featured-content h2 { font-size: 24px; font-weight: 400; margin: 8px 0; }
+.featured-content h2 a { text-decoration: none; color: var(--text); }
+.featured-content time { font-size: 12px; color: var(--muted); }
+.featured-content p { margin-top: 12px; color: #555; }
+
+/* Post grid */
+.post-grid { display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+.post-card { background: var(--card-bg); border: 1px solid var(--border); padding: 24px; }
+.post-card h3 { font-size: 18px; font-weight: 400; }
+.post-card h3 a { text-decoration: none; color: var(--text); }
+.post-card h3 a:hover { color: var(--accent); }
+.post-card .meta { font-size: 12px; color: var(--muted); margin: 6px 0 10px; display: flex; gap: 12px; }
+.post-card .category { color: var(--accent); }
+.post-card p { color: #555; font-size: 14px; }
+
+/* Single post */
+.post-single { margin-bottom: 48px; }
+.post-header { margin-bottom: 32px; }
+.post-header time { font-size: 12px; color: var(--muted); }
+.post-header h1 { font-size: 28px; font-weight: 400; margin: 8px 0; line-height: 1.3; }
+.post-meta { font-size: 12px; color: var(--muted); display: flex; gap: 12px; }
+.post-meta .category { color: var(--accent); }
+
+.post-content { line-height: 1.9; font-size: 15px; color: #333; }
+.post-content p { margin-bottom: 1.2em; }
+.post-content h2 { font-size: 20px; font-weight: 500; margin: 32px 0 12px; }
+.post-content h3 { font-size: 17px; font-weight: 500; margin: 24px 0 8px; }
+.post-content blockquote { border-left: 3px solid var(--accent); padding-left: 16px; margin: 16px 0; color: #666; font-style: italic; }
+.post-content img { max-width: 100%; height: auto; margin: 24px 0; }
+.post-content ul, .post-content ol { margin: 0 0 1.2em 24px; }
+.post-content a { color: var(--accent); }
+
+/* Post navigation */
+.post-nav { display: flex; justify-content: space-between; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
+.post-nav a { text-decoration: none; color: var(--text); font-size: 14px; }
+.post-nav a:hover { color: var(--accent); }
+
+/* List page */
+.list-page { margin-bottom: 48px; }
+.list-page h1 { font-size: 22px; font-weight: 400; margin-bottom: 32px; letter-spacing: 2px; text-transform: uppercase; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--border); padding: 24px 0 48px; display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+.site-footer nav { display: flex; gap: 16px; }
+.site-footer a { text-decoration: none; color: var(--muted); }
+.site-footer a:hover { color: var(--text); }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .site-header { flex-direction: column; gap: 16px; }
+  .hero h1 { font-size: 24px; }
+  .featured-card { padding: 24px; }
+  .featured-content h2 { font-size: 20px; }
+  .post-header h1 { font-size: 22px; }
+}
