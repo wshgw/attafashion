@@ -1,0 +1,29 @@
+{{ define "main" }}
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ $brands := where .Site.RegularPages "Section" "brands" }}
+{{ $all := sort ($posts | append $brands) "Date" "desc" }}
+<section class="list-page">
+  <div class="list-header">
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    </div>
+  </div>
+  <div class="container">
+    <div class="post-grid">
+      {{ range $all }}
+      <article class="post-card">
+        {{ with .Params.cover }}<div class="card-image" style="background-image: url('{{ . }}')"></div>{{ end }}
+        <div class="card-body">
+          <div class="meta">
+            {{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
+          </div>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p>{{ with .Summary }}{{ . | plainify | truncate 100 }}{{ else }}{{ with .Params.description }}{{ . | truncate 100 }}{{ end }}{{ end }}</p>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
