@@ -1,6 +1,6 @@
 baseURL = "https://www.attafashion.com"
 languageCode = "zh-CN"
-title = "STYLE"
+title = "attafashion"
 theme = "fashion"
 buildDrafts = false
 buildFuture = true
@@ -10,7 +10,7 @@ buildFuture = true
 [params]
   subtitle = "FASHION · LIFESTYLE · CULTURE"
   description = "A fresh take on fashion and style"
-  hero_image = "https://images.unsplash.com/photo-1581044777550-4c0edb1e4497?w=1600&q=80"
+  hero_image = "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1600&q=80"
 
 [menu]
   [[menu.main]]
