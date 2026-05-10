@@ -34,6 +34,11 @@
       {{ with .Params.hero.cta_primary }}<a href="{{ .url }}" class="lp-btn lp-btn-primary lp-btn-sm" target="_blank" rel="nofollow sponsored">{{ .text }}</a>{{ end }}
     </div>
     <nav class="lp-header-nav">
+      <a href="/" class="lp-nav-link">Home</a>
+      <a href="/categories/trends/" class="lp-nav-link">Trends</a>
+      <a href="/categories/streetwear/" class="lp-nav-link">Streetwear</a>
+      <a href="/categories/sustainable-fashion/" class="lp-nav-link">Sustainable</a>
+      <a href="/about/" class="lp-nav-link">About</a>
       {{ with .Params.hero.cta_secondary }}<a href="{{ .url }}" class="lp-btn lp-btn-outline lp-btn-sm">{{ .text }}</a>{{ end }}
       {{ with .Params.hero.cta_primary }}<a href="{{ .url }}" class="lp-btn lp-btn-primary lp-btn-sm" target="_blank" rel="nofollow sponsored">{{ .text }}</a>{{ end }}
     </nav>
