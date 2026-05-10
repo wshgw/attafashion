@@ -1,35 +1,54 @@
 {{ define "main" }}
-<section class="hero">
-  <h1>{{ .Site.Title }}</h1>
-  <p class="subtitle">{{ .Site.Params.subtitle }}</p>
+
+{{ $hero := .Site.Params.hero_image | default "https://images.unsplash.com/photo-1581044777550-4c0edb1e4497?w=1600&q=80" }}
+<section class="hero" style="background-image: url('{{ $hero }}')">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>{{ .Site.Title }}</h1>
+    <p class="subtitle">{{ .Site.Params.subtitle }}</p>
+    <span class="scroll-hint">↓</span>
+  </div>
 </section>
 
-<section class="featured">
-  {{ range first 1 (where .Site.RegularPages "Section" "posts") }}
-  <article class="featured-card">
-    <div class="featured-content">
-      <span class="tag">{{ index (.Params.categories) 0 | default "Feature" }}</span>
-      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
-      <p>{{ .Summary | plainify | truncate 120 }}</p>
-    </div>
-  </article>
-  {{ end }}
-</section>
-
-<section class="grid">
-  <h2 class="section-title">Latest</h2>
-  <div class="post-grid">
-    {{ range after 1 (where .Site.RegularPages "Section" "posts") }}
-    <article class="post-card">
-      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      <div class="meta">
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
-        <span class="category">{{ index (.Params.categories) 0 }}</span>
+<section class="section featured-section">
+  <div class="container">
+    {{ range first 1 (where .Site.RegularPages "Section" "posts") }}
+    <article class="featured-card">
+      {{ with .Params.cover }}<div class="featured-image" style="background-image: url('{{ . }}')"></div>{{ end }}
+      <div class="featured-content">
+        <span class="tag">{{ index (.Params.categories) 0 | default "Feature" }}</span>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        <p>{{ .Summary | plainify | truncate 150 }}</p>
+        <a href="{{ .RelPermalink }}" class="read-more">Read More →</a>
       </div>
-      <p>{{ .Summary | plainify | truncate 80 }}</p>
     </article>
     {{ end }}
   </div>
 </section>
+
+<section class="section latest-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Latest Stories</h2>
+      <a href="/posts/" class="view-all">View All →</a>
+    </div>
+    <div class="post-grid">
+      {{ range after 1 (where .Site.RegularPages "Section" "posts") }}
+      <article class="post-card">
+        {{ with .Params.cover }}<div class="card-image" style="background-image: url('{{ . }}')"></div>{{ end }}
+        <div class="card-body">
+          <div class="meta">
+            <span class="category">{{ index (.Params.categories) 0 }}</span>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          </div>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p>{{ .Summary | plainify | truncate 100 }}</p>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
 {{ end }}

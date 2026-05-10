@@ -10,6 +10,7 @@ buildFuture = true
 [params]
   subtitle = "FASHION · LIFESTYLE · CULTURE"
   description = "A fresh take on fashion and style"
+  hero_image = "https://images.unsplash.com/photo-1581044777550-4c0edb1e4497?w=1600&q=80"
 
 [menu]
   [[menu.main]]

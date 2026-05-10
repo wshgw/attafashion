@@ -1,8 +1,25 @@
 <footer class="site-footer">
-  <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
-  <nav>
-    {{ range .Site.Menus.footer }}
-    <a href="{{ .URL }}">{{ .Name }}</a>
-    {{ end }}
-  </nav>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">{{ .Site.Title }}</a>
+      <p class="footer-tagline">{{ .Site.Params.subtitle }}</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <a href="/categories/trends/">Trends</a>
+        <a href="/categories/streetwear/">Streetwear</a>
+        <a href="/categories/sustainable-fashion/">Sustainable</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="/index.xml">RSS</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
+  </div>
 </footer>

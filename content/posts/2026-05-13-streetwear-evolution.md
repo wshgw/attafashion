@@ -4,6 +4,7 @@ date: 2026-05-13
 description: "How streetwear continues to evolve and influence mainstream fashion"
 categories: ["Streetwear"]
 draft: false
+cover: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1000&q=80"
 ---
 
 Streetwear has come a long way from its roots in skate culture and hip-hop. Today, it sits at the intersection of subculture identity and high-fashion credibility, and the lines continue to blur.

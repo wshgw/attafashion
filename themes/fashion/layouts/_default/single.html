@@ -1,25 +1,35 @@
 {{ define "main" }}
 <article class="post-single">
-  <header class="post-header">
-    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
-    <h1>{{ .Title }}</h1>
-    <div class="post-meta">
-      {{ with .Params.categories }}
-      <span class="category">{{ index . 0 }}</span>
-      {{ end }}
-      <span class="reading-time">{{ .ReadingTime }} min read</span>
+  {{ with .Params.cover }}
+  <div class="post-cover" style="background-image: url('{{ . }}')"></div>
+  {{ end }}
+  <div class="container post-container">
+    <header class="post-header">
+      <div class="post-meta-top">
+        {{ with .Params.categories }}<span class="category">{{ index . 0 }}</span>{{ end }}
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        <span class="reading-time">{{ .ReadingTime }} min read</span>
+      </div>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="post-excerpt">{{ . }}</p>{{ end }}
+    </header>
+    <div class="post-content">
+      {{ .Content }}
     </div>
-  </header>
-  <div class="post-content">
-    {{ .Content }}
+    <nav class="post-nav">
+      {{ with .PrevInSection }}
+      <a href="{{ .RelPermalink }}" class="prev">
+        <span class="nav-label">← Previous</span>
+        <span class="nav-title">{{ .Title }}</span>
+      </a>
+      {{ end }}
+      {{ with .NextInSection }}
+      <a href="{{ .RelPermalink }}" class="next">
+        <span class="nav-label">Next →</span>
+        <span class="nav-title">{{ .Title }}</span>
+      </a>
+      {{ end }}
+    </nav>
   </div>
-  <nav class="post-nav">
-    {{ with .PrevInSection }}
-    <a href="{{ .RelPermalink }}" class="prev">← {{ .Title }}</a>
-    {{ end }}
-    {{ with .NextInSection }}
-    <a href="{{ .RelPermalink }}" class="next">{{ .Title }} →</a>
-    {{ end }}
-  </nav>
 </article>
 {{ end }}

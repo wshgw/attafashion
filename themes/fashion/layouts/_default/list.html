@@ -1,16 +1,26 @@
 {{ define "main" }}
 <section class="list-page">
-  <h1>{{ .Title }}</h1>
-  <div class="post-grid">
-    {{ range .Pages }}
-    <article class="post-card">
-      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      <div class="meta">
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
-      </div>
-      <p>{{ .Summary | plainify | truncate 80 }}</p>
-    </article>
-    {{ end }}
+  <div class="list-header">
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    </div>
+  </div>
+  <div class="container">
+    <div class="post-grid">
+      {{ range .Pages }}
+      <article class="post-card">
+        {{ with .Params.cover }}<div class="card-image" style="background-image: url('{{ . }}')"></div>{{ end }}
+        <div class="card-body">
+          <div class="meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          </div>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p>{{ .Summary | plainify | truncate 100 }}</p>
+        </div>
+      </article>
+      {{ end }}
+    </div>
   </div>
 </section>
 {{ end }}

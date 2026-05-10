@@ -4,6 +4,7 @@ date: 2026-05-12
 description: "A look at the key trends shaping fashion this season"
 categories: ["Trends"]
 draft: false
+cover: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1000&q=80"
 ---
 
 As the seasons shift, so does the landscape of fashion. Spring/Summer 2026 brings a fresh wave of silhouettes, textures, and attitudes that redefine how we dress for warmer days.
