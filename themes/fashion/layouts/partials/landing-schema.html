@@ -1,0 +1,65 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {{ with .Params.brand_name }}
+    {
+      "@type": "Store",
+      "@id": "{{ $.Permalink }}#store",
+      "name": {{ . | jsonify }},
+      "url": "{{ $.Permalink }}",
+      "description": {{ $.Description | jsonify }}{{ with $.Params.cover }},
+      "image": {{ . | jsonify }}{{ end }}{{ with $.Params.brand_url }},
+      "sameAs": [{{ . | jsonify }}]{{ end }}
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ $.Permalink }}#website",
+      "name": {{ . | jsonify }},
+      "url": "{{ $.Permalink }}"
+    }{{ with $.Params.products.items }},
+    {
+      "@type": "ItemList",
+      "itemListElement": [
+        {{ range $i, $p := . }}
+        {
+          "@type": "ListItem",
+          "position": {{ add $i 1 }},
+          "item": {
+            "@type": "Product",
+            "name": {{ $p.name | jsonify }},
+            "description": {{ $p.description | jsonify }}{{ with $p.image }},
+            "image": {{ . | jsonify }}{{ end }},
+            "offers": {
+              "@type": "Offer",
+              "price": {{ $p.price | jsonify }},
+              "priceCurrency": "USD"
+            }{{ with $p.rating }},
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": {{ . }},
+              "bestRating": "5"
+            }{{ end }}
+          }
+        }{{ if not (eq (add $i 1) (len $.Params.products.items)) }},{{ end }}
+        {{ end }}
+      ]
+    }{{ end }}{{ with $.Params.faq.items }},
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {{ range $i, $item := . }}
+        {
+          "@type": "Question",
+          "name": {{ $item.q | jsonify }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ $item.a | jsonify }}
+          }
+        }{{ if not (eq (add $i 1) (len $.Params.faq.items)) }},{{ end }}
+        {{ end }}
+      ]
+    }{{ end }}{{ end }}
+  ]
+}
+</script>

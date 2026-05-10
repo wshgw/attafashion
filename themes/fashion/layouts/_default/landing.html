@@ -5,15 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Title }} · {{ .Params.brand_name }}</title>
   <meta name="description" content="{{ .Description }}">
+  {{ with .Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
   <meta property="og:title" content="{{ .Title }}">
   <meta property="og:description" content="{{ .Description }}">
   <meta property="og:image" content="{{ with .Params.cover }}{{ . }}{{ end }}">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Permalink }}">
   <meta name="twitter:card" content="summary_large_image">
+  {{ with .Params.canonical_url }}<link rel="canonical" href="{{ . }}">{{ else }}<link rel="canonical" href="{{ .Permalink }}">{{ end }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/landing.css">
+  {{ with .Params.style_override }}<style>{{ . | safeCSS }}</style>{{ end }}
+  {{ partial "landing-schema.html" . }}
 </head>
 <body class="lp-page">
 
@@ -114,6 +119,46 @@
           </div>
           {{ with .description }}<p class="lp-product-card-desc">{{ . }}</p>{{ end }}
           <a href="{{ $.Params.hero.cta_primary.url | default $.Params.brand_url }}" class="lp-btn lp-btn-primary" target="_blank" rel="nofollow sponsored">Shop Now</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.amazon_products }}
+<section class="lp-section lp-amazon">
+  <div class="container">
+    {{ if or .heading .description }}
+    <div class="lp-section-heading lp-fade">
+      {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
+      {{ with .description }}<p>{{ . }}</p>{{ end }}
+    </div>
+    {{ end }}
+    {{ with .items }}
+    <div class="lp-amazon-grid">
+      {{ range . }}
+      {{ $reviews := .reviews }}{{ $url := .url }}
+      <div class="lp-amazon-card lp-fade">
+        <div class="lp-amazon-card-image">
+          <img data-src="{{ .image }}" alt="{{ .name }}" class="lp-lazy" width="400" height="400">
+          <noscript><img src="{{ .image }}" alt="{{ .name }}" style="display:none"></noscript>
+        </div>
+        <div class="lp-amazon-card-body">
+          <h3>{{ .name }}</h3>
+          {{ with .rating }}
+          <div class="lp-amazon-rating">
+            <div class="stars">
+              {{ $r := . }}{{ range seq (int $r) }}<svg viewBox="0 0 16 16"><path d="M8 1l2.2 4.4 4.8.7-3.5 3.4.8 4.8L8 12.2l-4.3 2.1.8-4.8L1 6.1l4.8-.7L8 1z" fill="currentColor"/></svg>{{ end }}
+              {{ range seq (sub 5 (int (math.Ceil $r))) }}<svg viewBox="0 0 16 16"><path d="M8 1l2.2 4.4 4.8.7-3.5 3.4.8 4.8L8 12.2l-4.3 2.1.8-4.8L1 6.1l4.8-.7L8 1z" fill="none" stroke="currentColor" stroke-width="1"/></svg>{{ end }}
+            </div>
+            {{ with $reviews }}<span>({{ . }})</span>{{ end }}
+          </div>
+          {{ end }}
+          {{ with .price }}<div class="lp-amazon-price">{{ . }}</div>{{ end }}
+          <a href="{{ $url }}" class="lp-btn lp-btn-outline" target="_blank" rel="nofollow sponsored">Buy on Amazon</a>
         </div>
       </div>
       {{ end }}
