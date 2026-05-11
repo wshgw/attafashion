@@ -6,7 +6,7 @@ categories:
   - comparisons
   - engage-pickleball
   - joola
-cover: "https://images.unsplash.com/photo-1616892060337-d23b4ccc003c?w=800"
+cover: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80"
 affiliate_url: "https://app.partnermatic.com/track/dcc4lu80pEHXMB4ExPE3jGqVS5Dvd_bOGOw35SdsY3MwrbtpYkNUoicpj_awn1rg1BmnweVSvG48MQcECuqLspLX2vQImV5eU94_bVZL7S1fA_c_c?url=https%3A%2F%2Fengagepickleball.com"
 ---
 

@@ -6,7 +6,7 @@ categories:
   - guides
   - engage-pickleball
   - buying-guides
-cover: "https://images.unsplash.com/photo-1623314824212-e009d21b7c26?w=800"
+cover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80"
 affiliate_url: "https://app.partnermatic.com/track/dcc4lu80pEHXMB4ExPE3jGqVS5Dvd_bOGOw35SdsY3MwrbtpYkNUoicpj_awn1rg1BmnweVSvG48MQcECuqLspLX2vQImV5eU94_bVZL7S1fA_c_c?url=https%3A%2F%2Fengagepickleball.com"
 ---
 

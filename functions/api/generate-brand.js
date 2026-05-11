@@ -181,7 +181,11 @@ STRICT RULES:
 - products MUST have wrapper "items" array — NOT a flat list
 - faq MUST have wrapper "items" array with "q"/"a" — NOT "question"/"answer"
 - cta MUST use "button_text"/"button_url" — NOT "button"/"url"
-- All images: https://images.unsplash.com/photo-XXXXX?w=400&q=80 (products) or w=600 (hero) or w=1200 (cover)
+- All images MUST use a REAL Unsplash photo ID from this list (do NOT invent photo IDs):
+  Cover: photo-1490481651871-ab68de25d43d, photo-1529139574466-a303027c1d8b, photo-1445205170230-053b83016050, photo-1483985988355-763728e1935b, photo-1556905055-8f358a7a47b2
+  Product: photo-1560343090-f0409e92791a, photo-1549298916-b41d501d3772, photo-1606107557195-0e29a4b5b4aa, photo-1491553895911-0055eca6402d, photo-1562183241-b937e95585b6
+  Hero: photo-1469334031218-e382a71b716b, photo-1506905925346-21bda4d32df4, photo-1441974231531-c6227db76b6e, photo-1523381210434-271e8be1f52b
+  Format: https://images.unsplash.com/photo-XXXXX?w=400&q=80 (products) or w=600 (hero) or w=1200 (cover)
 - NO body content after closing ---
 - Icon names (for trust_bar, benefits, features_strip): star, checkmark, heart, shield, check-circle, clock, package, plus, globe, lock, map-pin, users, home
 

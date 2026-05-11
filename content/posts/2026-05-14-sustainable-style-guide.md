@@ -4,7 +4,7 @@ date: 2026-05-14
 description: "How to build a wardrobe that's both stylish and environmentally conscious"
 categories: ["Sustainable Fashion"]
 draft: false
-cover: "https://images.unsplash.com/photo-1558769132-bb1e9eb5e1d6?w=1000&q=80"
+cover: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&q=80"
 ---
 
 Building a sustainable wardrobe doesn't mean sacrificing style. It's about being intentional with your choices and understanding that quality often trumps quantity.

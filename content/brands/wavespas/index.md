@@ -4,7 +4,7 @@ description: "Experience the ultimate in portable relaxation with WAVESPAS – p
 layout: landing
 draft: false
 date: 2026-05-11
-cover: "https://images.unsplash.com/photo-1606117331085-5760e3b58559?w=1200&q=80"
+cover: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1200&q=80"
 categories: ["Trends"]
 canonical_url: "https://app.partnermatic.com/track/546dtTPJqka_aCNa8NlrRqlGrgqZ_bkSAEzxk8ejiXCIuV2Or7szUttjh8Z_aY_alY7E4Qc6hlhsOcLoy3ycZCOxViRS7jiZT_b9Q9t6ofQDAAQ_c_c?url=https%3A%2F%2Fus.wavespas.com%2F"
 keywords: "WAVESPAS, inflatable spa, hot tub, portable spa, hydrotherapy"
@@ -27,7 +27,7 @@ hero:
   badge: "Premium Inflatable Spas"
   headline: "Your Backyard Oasis Awaits"
   tagline: "Premium inflatable hot tubs with rapid heating, powerful jets, and durable construction — enjoy year-round hydrotherapy at home."
-  image: "https://images.unsplash.com/photo-1606117331085-5760e3b58559?w=600&q=80"
+  image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80"
   cta_primary:
     text: "Shop Best Sellers"
     url: "https://app.partnermatic.com/track/546dtTPJqka_aCNa8NlrRqlGrgqZ_bkSAEzxk8ejiXCIuV2Or7szUttjh8Z_aY_alY7E4Qc6hlhsOcLoy3ycZCOxViRS7jiZT_b9Q9t6ofQDAAQ_c_c?url=https%3A%2F%2Fus.wavespas.com%2F"
@@ -52,7 +52,7 @@ products:
   items:
     - name: "WAVESPAS Bali"
       price: "$599.99"
-      image: "https://images.unsplash.com/photo-1606117331085-5760e3b58559?w=400&q=80"
+      image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=400&q=80"
       rating: 4.7
       reviews: "210+"
       badge: "Best Seller"

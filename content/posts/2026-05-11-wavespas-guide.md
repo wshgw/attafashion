@@ -3,7 +3,7 @@ title: "WAVESPAS Setup Guide: How to Install and Maintain Your Inflatable Spa"
 description: "A complete step-by-step guide to setting up your WAVESPAS inflatable hot tub, including water care, winter storage, and troubleshooting."
 date: 2026-05-11
 categories: ["Trends"]
-cover: "https://images.unsplash.com/photo-1606117331085-5760e3b58559?w=800&q=80"
+cover: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&q=80"
 affiliate_url: "https://app.partnermatic.com/track/546dtTPJqka_aCNa8NlrRqlGrgqZ_bkSAEzxk8ejiXCIuV2Or7szUttjh8Z_aY_alY7E4Qc6hlhsOcLoy3ycZCOxViRS7jiZT_b9Q9t6ofQDAAQ_c_c?url=https%3A%2F%2Fus.wavespas.com%2F"
 ---
 

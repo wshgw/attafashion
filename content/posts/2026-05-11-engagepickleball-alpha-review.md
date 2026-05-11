@@ -6,7 +6,7 @@ categories:
   - reviews
   - engage-pickleball
   - paddle-tests
-cover: "https://images.unsplash.com/photo-1632319440602-84c5e86990d1?w=800"
+cover: "https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=800&q=80"
 affiliate_url: "https://app.partnermatic.com/track/dcc4lu80pEHXMB4ExPE3jGqVS5Dvd_bOGOw35SdsY3MwrbtpYkNUoicpj_awn1rg1BmnweVSvG48MQcECuqLspLX2vQImV5eU94_bVZL7S1fA_c_c?url=https%3A%2F%2Fengagepickleball.com"
 ---
 

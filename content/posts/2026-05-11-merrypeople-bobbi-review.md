@@ -3,7 +3,7 @@ title: "Merry People Bobbi Boots Review: 30 Days of Rain, Mud, and City Streets"
 description: "We tested the iconic Merry People Bobbi Ankle Boot for 30 days. Honest review of comfort, waterproofing, durability, and whether these stylish gumboots are worth $160."
 date: 2026-05-11
 categories: ["Trends"]
-cover: "https://images.unsplash.com/photo-1599507593495-3f0efea58a4a?w=800&q=80"
+cover: "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=800&q=80"
 affiliate_url: "https://app.partnermatic.com/track/4853W2V0F5wljO8XMuhwaVbkxydezzCo6Rm_act0xWowqspCZIWPu8yBcTcj5uA1l2ohK9xX8_aPDUbXGw1zqhcdpu6E8mxDh3VisBIUUM5w_c_c?url=https%3A%2F%2Fmerrypeople.com"
 ---
 

@@ -3,7 +3,7 @@ title: "Merry People vs Hunter Boots: Which Rain Boot Brand Wins in 2026?"
 description: "Merry People vs Hunter — head-to-head comparison of Australia's cult-favorite gumboot brand vs the British heritage icon. We compare comfort, waterproofing, style, durability, and value."
 date: 2026-05-12
 categories: ["Trends"]
-cover: "https://images.unsplash.com/photo-1608256246200-53e635b5b65a?w=800&q=80"
+cover: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&q=80"
 affiliate_url: "https://app.partnermatic.com/track/4853W2V0F5wljO8XMuhwaVbkxydezzCo6Rm_act0xWowqspCZIWPu8yBcTcj5uA1l2ohK9xX8_aPDUbXGw1zqhcdpu6E8mxDh3VisBIUUM5w_c_c?url=https%3A%2F%2Fmerrypeople.com"
 ---
 

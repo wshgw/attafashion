@@ -4,7 +4,7 @@ description: "Comprehensive guide to Engage Pickleball: family-owned, American-m
 layout: "landing"
 draft: false
 date: 2026-05-11
-cover: "https://images.unsplash.com/photo-1632319440602-84c5e86990d1?w=1200&q=80"
+cover: "https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=1200&q=80"
 categories: ["Trends"]
 canonical_url: "https://engagepickleball.attafashion.com"
 keywords: "Engage Pickleball, pickleball paddles, USA-made paddles, Alpha paddle, Pursuit Pro1"
@@ -27,7 +27,7 @@ hero:
   badge: "USA-Made Pickleball Paddles"
   headline: "Engineered in Florida. Built to Win."
   tagline: "Family-owned, American-made pickleball paddles since 2015. Raw Toray T700 carbon fiber, thermoformed construction, and USAP-approved for tournament play."
-  image: "https://images.unsplash.com/photo-1632319440602-84c5e86990d1?w=600&q=80"
+  image: "https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=600&q=80"
   cta_primary:
     text: "Shop Best Sellers"
     url: "https://app.partnermatic.com/track/dcc4lu80pEHXMB4ExPE3jGqVS5Dvd_bOGOw35SdsY3MwrbtpYkNUoicpj_awn1rg1BmnweVSvG48MQcECuqLspLX2vQImV5eU94_bVZL7S1fA_c_c?url=https%3A%2F%2Fengagepickleball.com"
@@ -52,14 +52,14 @@ products:
   items:
     - name: "Alpha Pro 16mm"
       price: "$259.99"
-      image: "https://images.unsplash.com/photo-1616892060337-d23b4ccc003c?w=400&q=80"
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80"
       rating: 4.8
       reviews: "340+"
       badge: "Best Seller"
       description: "Gen 4 thermoformed paddle with Friction Fiber Carbon Skin and TrueStrike+ core. Elite spin, plush feel, and tournament-ready performance."
     - name: "Pursuit Pro1 Innovation"
       price: "$259.99"
-      image: "https://images.unsplash.com/photo-1623314824212-e009d21b7c26?w=400&q=80"
+      image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=80"
       rating: 4.7
       reviews: "280+"
       badge: "Pro Choice"
