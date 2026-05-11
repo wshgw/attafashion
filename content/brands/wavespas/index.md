@@ -1,0 +1,77 @@
+---
+title: "WAVESPAS"
+description: "Experience the ultimate in portable relaxation with WAVESPAS – premium inflatable spas designed for year-round comfort, easy setup, and luxurious hydrotherapy."
+layout: landing
+date: 2026-05-11
+categories: ["Trends"]
+brand_name: "WAVESPAS"
+brand_logo_svg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'><text x='10' y='45' font-family='Arial' font-size='40' font-weight='bold' fill='#0077be'>WAVE</text><text x='120' y='45' font-family='Arial' font-size='40' font-weight='bold' fill='#00aaff'>SPAS</text></svg>"
+hero:
+  title: "Your Backyard Oasis Awaits"
+  subtitle: "Premium inflatable hot tubs with rapid heating, powerful jets, and durable construction."
+  image: "https://images.unsplash.com/photo-1606117331085-5760e3b58559?w=800&q=80"
+  cta: "Shop Now"
+  url: "https://app.partnermatic.com/track/546dtTPJqka_aCNa8NlrRqlGrgqZ_bkSAEzxk8ejiXCIuV2Or7szUttjh8Z_aY_alY7E4Qc6hlhsOcLoy3ycZCOxViRS7jiZT_b9Q9t6ofQDAAQ_c_c?url=https%3A%2F%2Fus.wavespas.com%2F"
+products:
+  - name: "WAVESPAS Bali"
+    description: "4-person inflatable spa with 130 jets, LED lighting, and rapid heating system."
+    image: "https://images.unsplash.com/photo-1606117331085-5760e3b58559?w=400&q=80"
+    price: "$599.99"
+    url: "https://app.partnermatic.com/track/546dtTPJqka_aCNa8NlrRqlGrgqZ_bkSAEzxk8ejiXCIuV2Or7szUttjh8Z_aY_alY7E4Qc6hlhsOcLoy3ycZCOxViRS7jiZT_b9Q9t6ofQDAAQ_c_c?url=https%3A%2F%2Fus.wavespas.com%2F"
+  - name: "WAVESPAS Maui"
+    description: "6-person deluxe spa with 180 jets, waterfall feature, and app control."
+    image: "https://images.unsplash.com/photo-1606117331085-5760e3b58559?w=400&q=80"
+    price: "$799.99"
+    url: "https://app.partnermatic.com/track/546dtTPJqka_aCNa8NlrRqlGrgqZ_bkSAEzxk8ejiXCIuV2Or7szUttjh8Z_aY_alY7E4Qc6hlhsOcLoy3ycZCOxViRS7jiZT_b9Q9t6ofQDAAQ_c_c?url=https%3A%2F%2Fus.wavespas.com%2F"
+  - name: "WAVESPAS Tahiti"
+    description: "2-person round spa with 80 jets, ideal for couples and small spaces."
+    image: "https://images.unsplash.com/photo-1606117331085-5760e3b58559?w=400&q=80"
+    price: "$449.99"
+    url: "https://app.partnermatic.com/track/546dtTPJqka_aCNa8NlrRqlGrgqZ_bkSAEzxk8ejiXCIuV2Or7szUttjh8Z_aY_alY7E4Qc6hlhsOcLoy3ycZCOxViRS7jiZT_b9Q9t6ofQDAAQ_c_c?url=https%3A%2F%2Fus.wavespas.com%2F"
+benefits:
+  - title: "Year-Round Use"
+    description: "All-season insulation and freeze protection for outdoor enjoyment."
+    icon: "❄️"
+  - title: "Easy Setup"
+    description: "Inflates in minutes – no tools or professional installation needed."
+    icon: "⚡"
+  - title: "Hydrotherapy Jets"
+    description: "Strategically placed jets for full-body massage and relaxation."
+    icon: "💆"
+  - title: "Energy Efficient"
+    description: "Low power consumption with high-performance heating."
+    icon: "🌱"
+features_strip:
+  - text: "130+ Jets"
+    icon: "💦"
+  - text: "Rapid Heating"
+    icon: "🔥"
+  - text: "LED Lighting"
+    icon: "💡"
+  - text: "App Control"
+    icon: "📱"
+cta:
+  title: "Transform Your Backyard Today"
+  subtitle: "Limited-time offer – free shipping on all orders!"
+  button: "Shop WAVESPAS Now"
+  url: "https://app.partnermatic.com/track/546dtTPJqka_aCNa8NlrRqlGrgqZ_bkSAEzxk8ejiXCIuV2Or7szUttjh8Z_aY_alY7E4Qc6hlhsOcLoy3ycZCOxViRS7jiZT_b9Q9t6ofQDAAQ_c_c?url=https%3A%2F%2Fus.wavespas.com%2F"
+faq:
+  - question: "How long does it take to heat up?"
+    answer: "Most WAVESPAS models heat up to 104°F in 6-12 hours depending on starting water temperature."
+  - question: "Is it easy to maintain?"
+    answer: "Yes! With the included filter cartridges and chemical floater, water stays clean. Drain and refill every 2-3 months."
+  - question: "Can I use it in winter?"
+    answer: "Absolutely. The insulated cover and freeze protection system allow safe operation in temperatures as low as -4°F."
+footer:
+  copyright: "© 2026 WAVESPAS. All rights reserved."
+  links:
+    - text: "Privacy Policy"
+      url: "#"
+    - text: "Terms of Service"
+      url: "#"
+style_override:
+  primary_color: "#0077be"
+  secondary_color: "#00aaff"
+  accent_color: "#ff6600"
+  background_color: "#f0f8ff"
+---
