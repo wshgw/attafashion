@@ -3,6 +3,15 @@
     <div class="footer-brand">
       <a href="/" class="logo">{{ .Site.Title }}</a>
       <p class="footer-tagline">{{ .Site.Params.subtitle }}</p>
+      <p class="footer-desc">{{ .Site.Params.description }}</p>
+      <div class="footer-social">
+        <a href="/index.xml" class="social-link" aria-label="RSS Feed">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        </a>
+        <a href="mailto:admin@attafashion.com" class="social-link" aria-label="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
     </div>
     <div class="footer-links">
       <div class="footer-col">
@@ -12,17 +21,14 @@
         <a href="/categories/sustainable-fashion/">Sustainable</a>
       </div>
       <div class="footer-col">
-        <h4>Brands</h4>
-        <a href="/brands/rihoas/">RIHOAS</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="/index.xml">RSS</a>
-        <a href="/privacy-policy/">Privacy Policy</a>
+        <h4>Navigate</h4>
+        <a href="/posts/">Latest Posts</a>
+        <a href="/brands/">Brands</a>
+        <a href="/about/">About</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved. Contact: <a href="mailto:admin@attafashion.com">admin@attafashion.com</a></p>
+    <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
   </div>
 </footer>
