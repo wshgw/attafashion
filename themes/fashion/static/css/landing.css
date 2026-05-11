@@ -56,8 +56,9 @@
   font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.875rem;
   padding: 14px 28px; border: 2px solid transparent; border-radius: 50px;
   cursor: pointer; transition: all var(--lp-transition);
-  white-space: nowrap;
+  white-space: nowrap; text-shadow: 0 1px 3px rgba(0,0,0,0.25);
 }
+.lp-btn-outline, .lp-btn-outline-light { text-shadow: none; }
 .lp-btn-primary { background: var(--lp-primary); color: var(--lp-white); border-color: var(--lp-primary); }
 .lp-btn-primary:hover { background: var(--lp-primary-dark); border-color: var(--lp-primary-dark); color: var(--lp-white); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(196, 137, 122, 0.35); }
 .lp-btn-secondary { background: var(--lp-secondary); color: var(--lp-white); border-color: var(--lp-secondary); }
