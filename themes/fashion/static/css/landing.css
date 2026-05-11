@@ -60,13 +60,13 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 .lp-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.15); }
-.lp-btn-primary { background: var(--lp-secondary); color: var(--lp-white); border-color: var(--lp-secondary); }
+.lp-btn-primary { background: var(--lp-secondary); color: var(--lp-white); border-color: var(--lp-secondary); text-shadow: 0 1px 3px rgba(0,0,0,0.2); }
 .lp-btn-primary:hover { background: var(--lp-secondary-dark); border-color: var(--lp-secondary-dark); color: var(--lp-white); }
-.lp-btn-secondary { background: var(--lp-primary); color: var(--lp-white); border-color: var(--lp-primary); }
+.lp-btn-secondary { background: var(--lp-primary); color: var(--lp-white); border-color: var(--lp-primary); text-shadow: 0 1px 3px rgba(0,0,0,0.2); }
 .lp-btn-secondary:hover { background: var(--lp-primary-dark); border-color: var(--lp-primary-dark); color: var(--lp-white); }
-.lp-btn-outline { background: transparent; color: var(--lp-secondary); border-color: var(--lp-secondary); box-shadow: none; }
+.lp-btn-outline { background: transparent; color: var(--lp-secondary); border-color: var(--lp-secondary); box-shadow: none; text-shadow: none; }
 .lp-btn-outline:hover { background: var(--lp-secondary); color: var(--lp-white); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
-.lp-btn-outline-light { background: transparent; color: var(--lp-white); border-color: var(--lp-white); box-shadow: none; }
+.lp-btn-outline-light { background: transparent; color: var(--lp-white); border-color: var(--lp-white); box-shadow: none; text-shadow: none; }
 .lp-btn-outline-light:hover { background: var(--lp-white); color: var(--lp-secondary); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
 .lp-btn-sm { padding: 10px 22px; font-size: 0.75rem; }
 .lp-btn-lg { padding: 18px 40px; font-size: 1rem; }
@@ -176,7 +176,7 @@
   background: var(--lp-accent); color: var(--lp-white);
   padding: 4px 10px; border-radius: 4px;
 }
-.lp-product-card-body { padding: 20px; }
+.lp-product-card-body { padding: 20px; display: flex; flex-direction: column; align-items: flex-start; }
 .lp-product-card-title { font-size: 1.125rem; font-weight: 600; margin-bottom: 6px; }
 .lp-product-card-rating { display: flex; align-items: center; gap: 6px; font-size: 0.8125rem; color: var(--lp-text-lighter); margin-bottom: 6px; }
 .lp-product-card-rating .stars { display: flex; gap: 1px; }
@@ -184,7 +184,7 @@
 .lp-product-card-rating .stars svg.empty { fill: none; stroke: var(--lp-star); stroke-width: 1; }
 .lp-product-card-price { font-size: 1.125rem; font-weight: 700; color: var(--lp-secondary); margin-bottom: 10px; }
 .lp-product-card-desc { font-size: 0.8125rem; color: var(--lp-text-light); margin-bottom: 16px; line-height: 1.7; }
-.lp-product-card .lp-btn { width: 100%; }
+.lp-product-card .lp-btn { min-width: 60%; align-self: center; }
 
 /* ========== Benefits ========== */
 .lp-benefits { background: var(--lp-secondary); color: var(--lp-white); }
