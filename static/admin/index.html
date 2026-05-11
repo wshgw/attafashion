@@ -131,6 +131,10 @@
         <input type="url" id="url" placeholder="https://app.partnermatic.com/track/..." required>
       </div>
       <div class="field">
+        <label for="date">Publish Date</label>
+        <input type="date" id="date">
+      </div>
+      <div class="field">
         <label for="password">Admin Password</label>
         <input type="password" id="password" placeholder="Enter admin password" required>
       </div>
@@ -138,15 +142,18 @@
     </form>
 
     <div id="status" class="status"></div>
-    <p class="hint">Takes 1-2 minutes. Site auto-deploys after generation.</p>
+    <p class="hint">Date defaults to today. Future dates: content pushed now, visible after rebuild on that date. Takes ~1 min.</p>
   </div>
 
   <script>
+    document.getElementById('date').value = new Date().toISOString().slice(0, 10);
+
     document.getElementById('form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const brand = document.getElementById('brand').value.trim();
       const url = document.getElementById('url').value.trim();
       const password = document.getElementById('password').value.trim();
+      const publishDate = document.getElementById('date').value || new Date().toISOString().slice(0, 10);
       if (!brand || !url || !password) return;
 
       const btn = document.getElementById('btn');
@@ -160,7 +167,7 @@
         const res = await fetch('/api/generate-brand', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ brand, affiliateUrl: url, password })
+          body: JSON.stringify({ brand, affiliateUrl: url, password, publishDate })
         });
         const data = await res.json();
 

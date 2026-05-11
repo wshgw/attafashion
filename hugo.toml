@@ -3,7 +3,7 @@ languageCode = "zh-CN"
 title = "attafashion"
 theme = "fashion"
 buildDrafts = false
-buildFuture = false
+buildFuture = true
 
 [markup]
   [markup.goldmark]

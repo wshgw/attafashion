@@ -9,7 +9,7 @@ export async function onRequest(context) {
   if (request.method !== 'POST') return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405, headers: { ...cors, 'Content-Type': 'application/json' } });
 
   try {
-    const { brand, affiliateUrl, password } = await request.json();
+    const { brand, affiliateUrl, password, publishDate } = await request.json();
     if (!brand || !affiliateUrl) throw new Error('brand and affiliateUrl required');
 
     const adminPass = env.ADMIN_PASSWORD;
@@ -23,7 +23,7 @@ export async function onRequest(context) {
     if (!ghToken) throw new Error('GITHUB_TOKEN / GH_TOKEN not configured');
 
     // Step 1: Generate content via DeepSeek
-    const content = await generateContent(brand, affiliateUrl, dsKey);
+    const content = await generateContent(brand, affiliateUrl, dsKey, publishDate);
 
     // Step 2: Push to GitHub
     const result = await pushToGitHub(content, ghToken, repo, brand);
@@ -45,8 +45,8 @@ function base64Encode(str) {
   return btoa(bin);
 }
 
-async function generateContent(brand, url, apiKey) {
-  const today = new Date().toISOString().slice(0, 10);
+async function generateContent(brand, url, apiKey, publishDate) {
+  const today = publishDate || new Date().toISOString().slice(0, 10);
   const slug = brand.toLowerCase().replace(/[^a-z0-9]+/g, '').replace(/^[^a-z]+/, '');
 
   const systemPrompt = `You are a brand page generator for a Hugo static fashion site.
