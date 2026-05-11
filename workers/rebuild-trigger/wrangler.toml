@@ -1,0 +1,12 @@
+name = "attafashion-rebuild"
+main = "index.js"
+compatibility_date = "2026-05-11"
+
+[triggers]
+crons = ["0 6,12,18,0 * * *"]
+
+[vars]
+PAGES_PROJECT = "attafashion"
+
+[env.production]
+vars = { ENVIRONMENT = "production" }
