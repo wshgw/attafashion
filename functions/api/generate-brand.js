@@ -45,6 +45,13 @@ function base64Encode(str) {
   return btoa(bin);
 }
 
+// Remove trailing commas before ] or } — common AI JSON issue
+function sanitizeJSON(raw) {
+  // Strip markdown code fences if the AI wraps the JSON
+  let s = raw.trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '');
+  return s.replace(/,(\s*[\]}])/g, '$1');
+}
+
 async function generateContent(brand, url, apiKey, publishDate) {
   const today = publishDate || new Date().toISOString().slice(0, 10);
   const slug = brand.toLowerCase().replace(/[^a-z0-9]+/g, '').replace(/^[^a-z]+/, '');
@@ -209,7 +216,9 @@ RULES for posts:
 
   if (!res.ok) throw new Error(`DeepSeek API: ${res.status} ${await res.text()}`);
   const data = await res.json();
-  const content = JSON.parse(data.choices[0].message.content);
+  const rawContent = data.choices?.[0]?.message?.content;
+  if (!rawContent) throw new Error('DeepSeek returned empty content');
+  const content = JSON.parse(sanitizeJSON(rawContent));
 
   if (!content.brand_file || !content.posts?.length) throw new Error('AI response missing required fields');
   return content;
