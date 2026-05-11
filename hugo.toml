@@ -4,6 +4,12 @@ title = "attafashion"
 theme = "fashion"
 buildDrafts = false
 buildFuture = false
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [pagination]
   pagerSize = 20
 
