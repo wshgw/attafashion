@@ -17,10 +17,10 @@ export async function onRequest(context) {
     if (password !== adminPass) throw new Error('Invalid admin password');
 
     const dsKey = env.DEEPSEEK_API_KEY;
-    const ghToken = env.GITHUB_TOKEN;
+    const ghToken = env.GITHUB_TOKEN || env.GH_TOKEN;
     const repo = env.GITHUB_REPO || 'wshgw/attafashion';
     if (!dsKey) throw new Error('DEEPSEEK_API_KEY not configured');
-    if (!ghToken) throw new Error('GITHUB_TOKEN not configured');
+    if (!ghToken) throw new Error('GITHUB_TOKEN / GH_TOKEN not configured');
 
     // Step 1: Generate content via DeepSeek
     const content = await generateContent(brand, affiliateUrl, dsKey);
