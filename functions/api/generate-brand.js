@@ -53,28 +53,141 @@ async function generateContent(brand, url, apiKey) {
 
 Return a JSON object ONLY (no markdown, no explanation):
 {
-  "brand_file": "full content of content/brands/SLUG/index.md",
+  "brand_file": "full content of content/brands/SLUG/index.md (YAML frontmatter only)",
   "posts": [
-    {"filename": "content/posts/${today}-SLUG-review.md", "content": "..."},
-    {"filename": "content/posts/${today}-SLUG-guide.md", "content": "..."},
-    {"filename": "content/posts/${today}-SLUG-comparison.md", "content": "..."}
+    {"filename": "content/posts/2025-01-01-SLUG-review.md", "content": "markdown with frontmatter"},
+    {"filename": "content/posts/2025-01-01-SLUG-guide.md", "content": "markdown with frontmatter"},
+    {"filename": "content/posts/2025-01-01-SLUG-comparison.md", "content": "markdown with frontmatter"}
   ]
-} where SLUG is the brand slug.
+} where SLUG is the lowercase brand slug (letters and numbers only, no hyphens).
 
-RULES for brand_file:
-- Must have layout: "landing" in frontmatter
-- Uses YAML frontmatter with fields: title, description, layout, date, categories (["Trends"]), brand_name, brand_logo_svg (inline SVG), hero, products (3-4 items), benefits (3-4 items), features_strip (4 items), cta, faq (3 items), footer
-- All images use Unsplash URLs with format https://images.unsplash.com/photo-XXXXX?w=400&q=80
-- CTA buttons all use the affiliate URL provided
-- Include style_override with brand-appropriate colors
-- NO body content after the frontmatter
+CRITICAL: brand_file must be YAML frontmatter ONLY (no body content after ---). Use this EXACT field structure:
+
+---
+title: "Brand Name — Short Tagline"
+description: "SEO meta description ~150 chars"
+layout: landing
+date: ${today}
+cover: "https://images.unsplash.com/photo-XXXXX?w=1200&q=80"
+categories: ["Trends"]
+canonical_url: "AFFILIATE_URL"
+keywords: "keyword1, keyword2, keyword3"
+
+brand_name: "Brand Name"
+brand_url: "AFFILIATE_URL"
+brand_logo_svg: "<svg>...</svg>"
+
+announcement_text: "FREE SHIPPING / SALE etc"
+
+style_override: |
+  :root {
+    --lp-primary: #HEX;
+    --lp-primary-dark: #HEX;
+    --lp-primary-light: #HEX;
+    --lp-accent: #HEX;
+  }
+
+hero:
+  badge: "Short category tag"
+  headline: "Main headline (not 'title')"
+  tagline: "Supporting description (not 'subtitle')"
+  image: "https://images.unsplash.com/photo-XXXXX?w=600&q=80"
+  cta_primary:
+    text: "Shop Now"
+    url: "AFFILIATE_URL"
+  cta_secondary:
+    text: "Learn More"
+    url: "#section"
+
+trust_bar:
+  - icon: "star"
+    text: "Feature 1"
+  - icon: "checkmark"
+    text: "Feature 2"
+  - icon: "shield"
+    text: "Feature 3"
+  - icon: "heart"
+    text: "Feature 4"
+
+products:
+  heading: "Section Heading"
+  subheading: "Section Subtitle"
+  description: "Short intro paragraph"
+  items:
+    - name: "Product Name"
+      price: "$XX.XX"
+      image: "https://images.unsplash.com/photo-XXXXX?w=400&q=80"
+      rating: 4.5
+      reviews: "123+"
+      badge: "Best Seller"
+      description: "1-2 sentence product description"
+
+benefits:
+  heading: "Why Brand Name"
+  items:
+    - icon: "shield"
+      title: "Benefit Title"
+      description: "Benefit description"
+
+features_strip:
+  - icon: "package"
+    title: "Free Shipping"
+    subtitle: "On orders over $X"
+  - icon: "clock"
+    title: "Returns"
+    subtitle: "30-day policy"
+  - icon: "shield"
+    title: "Warranty"
+    subtitle: "Lifetime"
+  - icon: "star"
+    title: "Quality"
+    subtitle: "Premium"
+
+cta:
+  headline: "Final CTA Headline"
+  tagline: "Supporting text"
+  button_text: "Shop Now"
+  button_url: "AFFILIATE_URL"
+
+faq:
+  heading: "Frequently Asked Questions"
+  items:
+    - q: "Question?"
+      a: "Answer..."
+
+footer:
+  description: "Brand description for footer"
+  copyright: "2026 Brand Name Guide. All rights reserved."
+  copyright_url: "https://attafashion.com/brands/SLUG/"
+  columns:
+    - heading: "Shop"
+      links:
+        - text: "All Products"
+          url: "AFFILIATE_URL"
+    - heading: "Learn"
+      links:
+        - text: "Review"
+          url: "/posts/${today}-SLUG-review/"
+    - heading: "Support"
+      links:
+        - text: "Privacy Policy"
+          url: "/privacy-policy/"
+---
+
+STRICT RULES:
+- style_override MUST be a pipe-string (literal block |), NEVER a YAML object or map
+- Products exactly 3-4 items, benefits 3-4 items, features_strip exactly 4 items, faq exactly 3 items
+- hero MUST use "headline" and "tagline" — NOT "title" or "subtitle"
+- products MUST have wrapper "items" array — NOT a flat list
+- faq MUST have wrapper "items" array with "q"/"a" — NOT "question"/"answer"
+- cta MUST use "button_text"/"button_url" — NOT "button"/"url"
+- All images: https://images.unsplash.com/photo-XXXXX?w=400&q=80 (products) or w=600 (hero) or w=1200 (cover)
+- NO body content after closing ---
+- Icon names (for trust_bar, benefits, features_strip): star, checkmark, heart, shield, check-circle, clock, package, plus, globe, lock, map-pin, users, home
 
 RULES for posts:
-- Frontmatter must include: title, description, date, categories: ["Trends"], cover (Unsplash URL), affiliate_url
-- Content must include 2-3 affiliate link anchor texts pointing to the affiliate URL
-- Articles should be informative, SEO-optimized
-- Include cross-links between the 3 articles
-- Standard markdown format, no shortcodes`;
+- Frontmatter: title, description, date, categories: ["Trends"], cover (Unsplash URL), affiliate_url (AFFILIATE_URL)
+- Content: 2-3 affiliate link anchor texts, informative & SEO-optimized, cross-links between articles, standard markdown, no shortcodes`;
 
   const res = await fetch('https://api.deepseek.com/v1/chat/completions', {
     method: 'POST',
