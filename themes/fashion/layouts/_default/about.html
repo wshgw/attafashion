@@ -1,0 +1,146 @@
+{{ define "main" }}
+
+<section class="about-hero" style="background-image:linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 100%),url('{{ with .Params.cover }}{{ . }}{{ else }}{{ .Site.Params.hero_image }}{{ end }}')">
+  <div class="about-hero-content">
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container about-content">
+    {{ .Content }}
+  </div>
+</section>
+
+{{ with .Params.categories }}
+<section class="section" style="background:var(--bg-light);">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;margin-bottom:48px;">What We Cover</h2>
+    <div class="about-categories">
+      {{ range . }}
+      <a href="{{ .url }}" class="about-category-card">
+        <div class="about-category-icon">{{ partial "landing-icon.html" .icon }}</div>
+        <h3>{{ .name }}</h3>
+        <p>{{ .description }}</p>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.stats }}
+<section class="about-stats">
+  <div class="container">
+    <div class="about-stats-grid">
+      {{ range . }}
+      <div class="about-stat">
+        <span class="about-stat-number">{{ .number }}</span>
+        <span class="about-stat-label">{{ .label }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section class="section about-contact">
+  <div class="container" style="text-align:center;max-width:600px;">
+    <h2 class="section-title" style="text-align:center;margin-bottom:16px;">Get in Touch</h2>
+    <p style="color:var(--text-light);font-size:15px;line-height:1.8;margin-bottom:24px;">
+      Questions, suggestions, or a brand you'd like us to review?<br>
+      We'd love to hear from you.
+    </p>
+    <a href="mailto:admin@attafashion.com" class="about-email-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      admin@attafashion.com
+    </a>
+  </div>
+</section>
+
+<style>
+.about-hero {
+  height: 50vh; min-height: 320px; max-height: 500px;
+  display: flex; align-items: center; justify-content: center;
+  background-size: cover; background-position: center;
+}
+.about-hero-content { text-align:center;color:#fff;padding:24px; }
+.about-hero-content h1 {
+  font-family: var(--font-display); font-size:clamp(32px,5vw,52px);
+  font-weight:400; letter-spacing:4px; text-transform:uppercase;
+  margin-bottom:12px; text-shadow:0 2px 20px rgba(0,0,0,.3);
+}
+.about-hero-content p {
+  font-size:clamp(14px,2vw,17px); letter-spacing:2px;
+  opacity:.9; max-width:600px; margin:0 auto;
+  font-weight:300;
+}
+.about-content { max-width:680px;margin:0 auto; }
+.about-content h2 {
+  font-family: var(--font-display); font-size:28px;
+  font-weight:400; margin:48px 0 16px;
+}
+.about-content h2:first-child { margin-top:0; }
+.about-content h3 {
+  font-family: var(--font-display); font-size:20px;
+  font-weight:400; margin:24px 0 8px;
+}
+.about-content p { color:var(--text-light);line-height:1.9;margin-bottom:1.2em;font-size:15px; }
+.about-content ul { margin:0 0 1.2em 24px; }
+.about-content li { color:var(--text-light);margin-bottom:6px;line-height:1.7; }
+.about-content strong { color:var(--text); }
+.about-categories {
+  display:grid; grid-template-columns:repeat(2,1fr); gap:20px;
+}
+.about-category-card {
+  display:block; padding:28px; border:1px solid var(--border);
+  border-radius:8px; transition:all var(--transition);
+  background:var(--bg);
+}
+.about-category-card:hover {
+  border-color:var(--accent); transform:translateY(-3px);
+  box-shadow:0 12px 24px -8px rgba(0,0,0,.08);
+}
+.about-category-icon {
+  width:40px;height:40px;margin-bottom:12px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;background:var(--bg-light);
+}
+.about-category-icon svg { width:20px;height:20px; }
+.about-category-card h3 {
+  font-family:var(--font-display); font-size:18px;
+  font-weight:400; margin-bottom:6px; color:var(--text);
+}
+.about-category-card p { font-size:13px;color:var(--text-light);line-height:1.6;margin:0; }
+.about-stats {
+  background:var(--text); padding:60px 0;
+}
+.about-stats-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:24px;
+  text-align:center;
+}
+.about-stat-number {
+  display:block; font-family:var(--font-display);
+  font-size:36px; color:#fff; margin-bottom:4px;
+}
+.about-stat-label {
+  font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#888;
+}
+.about-email-btn {
+  display:inline-flex;align-items:center;
+  background:var(--accent);color:#fff;padding:14px 28px;
+  border-radius:6px;font-size:14px;font-weight:500;
+  letter-spacing:0.5px;transition:background var(--transition);
+}
+.about-email-btn:hover { background:var(--accent-hover);color:#fff; }
+.about-contact { padding-bottom:80px; }
+
+@media (max-width:640px) {
+  .about-categories { grid-template-columns:1fr; }
+  .about-stats-grid { grid-template-columns:repeat(2,1fr); gap:32px; }
+  .about-stat-number { font-size:28px; }
+}
+</style>
+
+{{ end }}
