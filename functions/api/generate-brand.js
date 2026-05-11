@@ -9,8 +9,12 @@ export async function onRequest(context) {
   if (request.method !== 'POST') return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405, headers: { ...cors, 'Content-Type': 'application/json' } });
 
   try {
-    const { brand, affiliateUrl } = await request.json();
+    const { brand, affiliateUrl, password } = await request.json();
     if (!brand || !affiliateUrl) throw new Error('brand and affiliateUrl required');
+
+    const adminPass = env.ADMIN_PASSWORD;
+    if (!adminPass) throw new Error('ADMIN_PASSWORD not configured on server');
+    if (password !== adminPass) throw new Error('Invalid admin password');
 
     const dsKey = env.DEEPSEEK_API_KEY;
     const ghToken = env.GITHUB_TOKEN;

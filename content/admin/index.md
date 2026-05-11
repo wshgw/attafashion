@@ -36,6 +36,10 @@ draft: false
       <label for="url">Affiliate URL</label>
       <input type="url" id="url" placeholder="https://app.partnermatic.com/track/..." required>
     </div>
+    <div class="bg-field">
+      <label for="password">Admin Password</label>
+      <input type="password" id="password" placeholder="Enter admin password" required>
+    </div>
     <button type="submit" class="bg-btn" id="submitBtn">Generate &amp; Publish</button>
   </form>
 
@@ -48,7 +52,8 @@ document.getElementById('brandForm').addEventListener('submit', async function(e
   e.preventDefault();
   const brand = document.getElementById('brand').value.trim();
   const url = document.getElementById('url').value.trim();
-  if (!brand || !url) return;
+  const password = document.getElementById('password').value.trim();
+  if (!brand || !url || !password) return;
 
   const btn = document.getElementById('submitBtn');
   const status = document.getElementById('status');
@@ -61,7 +66,7 @@ document.getElementById('brandForm').addEventListener('submit', async function(e
     const res = await fetch('/api/generate-brand', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ brand, affiliateUrl: url })
+      body: JSON.stringify({ brand, affiliateUrl: url, password })
     });
     const data = await res.json();
 
